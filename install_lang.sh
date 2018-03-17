@@ -1,0 +1,1 @@
+cp -r ./i18n /usr/lib/ckan/default/src/ckan/ckan
