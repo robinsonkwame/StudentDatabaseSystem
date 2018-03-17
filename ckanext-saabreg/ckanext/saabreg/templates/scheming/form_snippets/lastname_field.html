@@ -1,0 +1,6 @@
+{% import 'macros/form.html' as form %}
+{% if user_info is not defined %}
+	{% set user_info = h.saabreg_get_user_info() %}
+{% endif %}
+
+{{ form.input(field.field_name, id = "field-" + field.field_name, label=field.label, value=user_info.last_name, classes=["control-medium", "saabreg_field_disabled"]) }}

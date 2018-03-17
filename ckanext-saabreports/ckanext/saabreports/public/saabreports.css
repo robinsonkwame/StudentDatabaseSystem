@@ -1,0 +1,86 @@
+/* TODO: Cleanup */
+
+.saabreports-title {
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+.saabreports-form label {
+	width: 91px !important;
+}
+
+.saabreports-form .empty {
+	margin-bottom: 10px;
+}
+
+.saabreports-form > .control-group > .controls {
+	margin-left: 0px;
+}
+
+.saabreports-form .btn {
+	top: 0px;
+}
+
+.saabreports-form select {
+	margin-bottom: 0px;
+}
+
+.saabreports-form input[type=text] {
+	margin-left: 20px;
+}
+
+.report-icon {
+	font-size: 13pt;
+	margin-right: 5px;
+}
+
+.filter-content {
+	margin-bottom: 20px;
+}
+
+.input-container {
+	display: inline-block;
+}
+
+.filter-content input,
+.filter-content select,
+.filter-content .input-container {
+	margin-left: 20px;
+}
+
+.filter-content input[type=number] {
+	width: 60px;
+	margin: 0px 10px;
+}
+
+.module hr {
+	color: #444444;
+	background-color: #444444;
+	height: 1px;
+	margin: 30px 0px;
+}
+
+.filter-title {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+#student-filters,
+#semester-filters {
+	display: none;
+}
+
+.saabreports-missing-label {
+	display: block;
+}
+
+.missing-field {
+	display: block;
+	margin-left: 40px;
+}
+
+.missing-field input {
+	top: 0px;
+	margin-right: 15px;
+	margin-bottom: 5px;
+}

@@ -1,0 +1,394 @@
+{
+	"scheming_version": 1,
+	"dataset_type": "student",
+	"about": "A schema for SAAB student datasets",
+	"about_url": "",
+	"dataset_fields": [
+		{
+			"field_name": "title",
+			"label": "Username",
+			"preset":"title",
+			"form_placeholder": "username",
+			"form_snippet": "username_field.html"
+		},
+		{
+			"field_name": "name",
+			"label": "URL",
+			"form_placeholder": "username-here",
+			"form_snippet": "username_field.html"
+		},
+		{
+			"field_name": "field-allowed_users_str",
+			"label": "Allowed Users",
+			"preset": "allowed_users"
+		},
+		{
+			"field_name": "first_name",
+			"label": "First Name",
+			"form_placeholder": "first name",
+			"form_snippet": "firstname_field.html"
+		},
+		{
+			"field_name": "last_name",
+			"label": "Last Name",
+			"form_placeholder": "last name",
+			"form_snippet": "lastname_field.html"
+		},
+		{
+			"field_name": "student_middle_name",
+			"label": "Middle Name",
+			"form_placeholder": "middle name"
+		},
+		{
+			"field_name": "parent_first_name",
+			"label": "Parent First Name",
+			"form_placeholder": "parent first name"
+		},
+		{
+			"field_name": "parent_last_name",
+			"label": "Parent Last Name",
+			"form_placeholder": "parent last name"
+		},
+		{
+			"field_name": "parent_middle_name",
+			"label": "Parent Middle Name",
+			"form_placeholder": "parent last name"
+		},
+		{
+			"field_name": "contact_email",
+			"label": "Contact Email Address",
+			"form_placeholder": "myname@example.com"
+		},
+		{
+			"field_name": "contact_phone_number",
+			"label": "Phone Number",
+			"form_placeholder": "(123) 456-7890"
+		},
+		{
+			"field_name": "enrollment_date",
+			"label": "Date of Enrollment",
+			"preset":"date",
+			"form_placeholder": "enrollment"
+		},
+		{
+			"field_name": "graduation_date",
+			"label": "Date of Graduation",
+			"preset":"date",
+			"form_placeholder": "eg. 2010"
+		},
+		{
+			"field_name": "student_DOB",
+			"preset":"date",
+			"label": "Date of Birth"
+		},
+		{
+			"field_name": "race",
+			"label": "Race",
+			"help_text": "Which racial category best describes you?",
+			"help_inline": true,
+			"preset": "select",
+			"choices": [
+				{
+					"value": "american_indian",
+					"label": "American Indian"
+				},
+				{
+					"value": "alaska_native",
+					"label": "Alaska Native"
+				},
+				{
+					"value": "asian",
+					"label": "Asian"
+				},
+				{
+					"value": "african_american",
+					"label": "African American"
+				},
+				{
+					"value": "hispanic",
+					"label": "Hispanic"
+				},
+				{
+					"value": "pacific_native",
+					"label": "Native Hawaiian or Other Pacific Islander"
+				},
+				{
+					"value": "white",
+					"label": "White"
+				},
+				{
+					"value": "multiple_races",
+					"label": "Two or More Races"
+				},
+				{
+					"value": "other",
+					"label": "Other"
+				}
+			]
+		},
+		{
+			"field_name": "departure_date",
+			"label": "Departure Date",
+			"preset":"date",
+			"form_placeholder": "eg. 2015"
+		},
+		{
+			"field_name": "city_of_residence",
+			"label": "Current city of residence"
+		},
+		{
+			"field_name": "state_of_residence",
+			"label": "Current state of residence"
+		},
+		{
+			"field_name": "owner_org",
+			"label": "Current School",
+			"preset": "dataset_organization",
+			"form_snippet": "chapter_field.html"
+		},
+		{
+			"field_name": "student_id_number",
+			"label": "Student ID Number"
+		},
+		{
+			"field_name": "student_consent",
+			"label": "Student Consent",
+			"help_text": "Do we have your consent on file?",
+			"help_inline": true,
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "parent_consent",
+			"label": "Parental Consent",
+			"help_text": "Do we have your parent's consent on file?",
+			"help_inline": true,
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "pdp_exists",
+			"label": "Do we have your Personal Development Plan (PDP)"
+		},
+		{
+			"field_name": "pdp_notes",
+			"label": "PDP Notes",
+			"form_snippet": "markdown.html"
+		},
+		{
+			"field_name": "psat",
+			"label": "Have you taken the Preliminary Scholastic Aptitude Test?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "sat",
+			"label": "Have you taken the Scholastic Aptitude Test?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "act",
+			"label": "Have you taken the American College Test?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "fafsa",
+			"label": "Have you completed the Free Application for Federal Student Aid?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "college_applications",
+			"label": "Have you submitted college applications?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		}
+	],
+	"resource_fields": [
+		{
+			"field_name": "name",
+			"label": "Semester",
+			"required":"true",
+			"form_placeholder": "eg. Q1 2017"
+		},
+		{
+			"field_name": "after_school_events",
+			"label": "Did you do after school events?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "after_club_events",
+			"label": "Did you do after SAAB/B2B events?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "after_school_dates",
+			"label": "When did you do after school events?"
+		},
+		{
+			"field_name": "after_club_dates",
+			"label": "When did you do after SAAB/B2B events?"
+		},
+		{
+			"field_name": "leadership_saab",
+			"label": "Did you take on any leadership positions?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "leadership_saab_notes",
+			"label": "Is so, what leadership positions did you take?",
+			"form_snippet": "markdown.html"
+		},
+		{
+			"field_name": "community_service_events",
+			"label": "Did you take on any leadership positions?",
+			"preset": "select",
+			"choices": [
+				{
+					"value": "true",
+					"label": "Yes"
+				},
+				{
+					"value": "false",
+					"label": "No"
+				}
+			]
+		},
+		{
+			"field_name": "community_service_dates",
+			"label": "Is so, when did you do community Service?"
+		},
+		{
+			"field_name": "advisor_meeting_dates",
+			"label": "Advisor Meeting dates"
+		},
+		{
+			"field_name": "overall_gpa",
+			"label": "Overall GPA"
+		},
+		{
+			"field_name": "credits_attempted",
+			"label": "Credits Attempted"
+		},
+		{
+			"field_name": "credits_earned",
+			"label": "Credits Earned"
+		},
+		{
+			"field_name": "days_absent",
+			"label": "Days Absent"
+		},
+		{
+			"field_name": "passed_all_classes",
+			"label": "Did you pass every class?"
+		},
+		{
+			"field_name": "academic_advisor_notes",
+			"label": "Advisor Notes",
+			"form_snippet": "markdown.html"
+		},
+		{
+			"field_name": "degree_obtained1",
+			"label": "Degree Earned"
+		},
+		{
+			"field_name": "degree_obtained2",
+			"label": "Degree Earned"
+		}
+	]
+}

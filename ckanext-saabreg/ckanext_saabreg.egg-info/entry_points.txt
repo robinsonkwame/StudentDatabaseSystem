@@ -1,0 +1,7 @@
+
+		[ckan.plugins]
+		saabreg=ckanext.saabreg.plugin:SaabRegPlugin
+
+		[babel.extractors]
+		ckan = ckan.lib.extract:extract_ckan
+	

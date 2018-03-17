@@ -1,0 +1,132 @@
+{% import "macros/form.html" as form %}
+{% import "report_macros.html" as rm with context %}
+{% extends "page.html" %}
+
+{% block styles %}
+	{{ super() }}
+	<link rel="stylesheet" href="/saabreports.css">
+{% endblock %}
+
+{% block scripts %}
+	{{ super() }}
+	<script type="text/javascript" src="/saabreports.js" defer></script>
+{% endblock %}
+
+{% block subtitle %} Create Report {% endblock %}
+
+{% block breadcrumb_content %}
+	<li class="active">{% link_for 'Create Report', controller='ckanext.saabreports.plugin:SaabReportsController', action='create_report' %}</li>
+{% endblock %}
+
+{% block primary %}
+<div class="module">
+	<div class="module-content">
+		{% if saabreports_authorized %}
+			<h3 class="saabreports-title">Generate a New Report</h3>
+			{#
+			#	Chapter selector for users with
+			#	multiple chapter privs
+			#}
+			{% if saabreports_all_chapters|length > 1 %}
+				<div class="control-group">
+					<form class="saabreports-form" method="post">
+						{{ rm.sneaky('form_id', 'chapter_selection') }}
+						{{ rm.obj_selector('chapter', saabreports_all_chapters, default_all=True) }}
+						<input type="submit" value="Filter by chapter" name="chapter_choice" class="btn btn-default">
+						{% if chapter_choice is defined %}
+							<div>
+								<span class="empty">Current chapter:</span> {{ chapter_choice_display }}
+							</div>
+						{% endif %}
+					</form>
+				</div>
+			{% endif %}
+
+			{#
+			#	Individual student report
+			#}
+			<hr>
+			{{ rm.report_top('Student Overview', 'student', 'Generate a student report that can be filtered and downloaded.') }}
+				<div class="control-group">
+					{{ rm.obj_selector('student', saabreports_students) }}
+					{{ rm.type_selector() }}
+				</div>
+				{% if student_error is defined %}
+					{{ rm.error_msg(student_error) }}
+				{% endif %}
+			{{ rm.report_bottom() }}
+
+			{#
+			#	Activity report
+			#}
+			<hr>
+			{{ rm.report_top('Activity Participation', 'chapter_activity', 'Generate a chapter activity participtation report that can be filtered and downloaded.') }}
+				{% if chapter_activity_error is defined %}
+					{{ rm.error_msg(chapter_activity_error) }}
+				{% endif %}
+			{{ rm.report_bottom() }}
+
+			{#
+			#	Membership summary
+			#}
+			<hr>
+			{{ rm.report_top('Membership Summary', 'chapter_member', 'Generate a chapter membership summary report that can be filtered and downloaded.') }}
+				{% if chapter_member_error is defined %}
+					{{ rm.error_msg(chapter_member_error) }}
+				{% endif %}
+			{{ rm.report_bottom() }}
+
+			{#
+			#	Custom
+			#}
+			<hr>
+			{{ rm.report_top('Custom', 'custom', 'Generate a custom student or semester report.') }}
+				{{ rm.type_selector(id='custom-type-selector') }}
+				<h4 class="filter-title">Filters:</h4>
+				<div class="empty">Filters are applied using 'and'</div>
+				<div class="control-group filter-group">
+					<div id="no-filters">
+						Please select a report type first.
+					</div>
+					<div id="student-filters">
+						<div class="filter-content">
+								<h4 class="saabreports-missing-label">Missing fields:</h4>
+							{{ rm.missing_fields(saabreports_missing_student) }}
+						</div>
+					</div>
+					<div id="semester-filters">
+						<div class="filter-content">
+							<label class="control-label">Semester</label>
+							<select name="semester">
+								<option value="__all__" selected>All</option>
+								{% for semester in saabreports_semester_names %}
+									<option value="{{ semester }}">{{ semester }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="filter-content">
+							<label class="control-label">Overall GPA</label>
+							<div class="input-container">
+								From <input type="number" value="0" name="filter_gpa_min">
+								to <input type="number" value="4" name="filter_gpa_max">
+							</div>
+						</div>
+						<div class="filter-content">
+							<h4 class="saabreports-missing-label">Missing fields:</h4>
+							{{ rm.missing_fields(saabreports_missing_semester) }}
+						</div>
+					</div>
+				</div>
+				{% if custom_error is defined %}
+					{{ rm.error_msg(custom_error) }}
+				{% endif %}
+			{{ rm.report_bottom() }}
+		
+		{% else %}
+			You are not authorized to use the reporting tool.
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

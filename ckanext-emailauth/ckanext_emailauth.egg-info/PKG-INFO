@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: ckanext-emailauth
+Version: 0.1.0
+Summary: Email authentication
+Home-page: https://github.com/robinsax/ckanext-emailauth
+Author: Robin Saxifrage
+Author-email: robinsaxifrage@live.ca
+License: AGPL
+Description: #	What?
+        
+        A CKAN plugin that allows users to authenticate via email. The default authentication method is still supported.
+        
+        Tested on 2.7+.
+        
+        #	Why?
+        
+        So your CKAN users don't need to remember their passwords.
+        
+        #	How?
+        
+        Install like any other CKAN plugin. Check out the CKAN docs for a tutorial on how to do that.
+        
+        Unsurprisingly, requires an SMTP client (eg. postfix).
+        
+        Configuration includes:
+        * `ckan.emailauth.login_key_expiry_hrs`, the number of hours a login email's link will stay valid. 
+        	* Default 48.
+        * `ckan.emailauth.login_key_size`, the number of bytes to use for the automatic login key.
+        	* Default 20.
+        * `ckan.emailauth.email_content`, a format string for the email. The formatted value is link HREF.
+        	* Default authored for SAAB.
+        * `ckan.emailauth.email_sender`, the name of the email sender. 
+        	* Default 'login'.
+        * `ckan.emailauth.email_subject`, the subject of the login email. 
+        	* Default authored for SAAB.
+         
+        #	Who?
+        
+        Authored by Robin Saxifrage of [OpenGovGear](http://opengovgear.com) for [SAAB](http://saabnational.org).
+Keywords: CKAN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 2.7

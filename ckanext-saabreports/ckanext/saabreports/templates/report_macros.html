@@ -1,0 +1,64 @@
+{#
+#	Macros used in create_report.html
+#}
+
+{% macro sneaky(key, val) %}
+	<input type="text" name="{{ key }}" value="{{ val }}" style="display: none;">
+{% endmacro %}
+
+{% macro report_top(type, id, desc, error=None) %}
+	<form class="form-horizontal saabreports-form" method="post">
+		<h3 class="dataset-heading">
+			<span class="icon-beaker report-icon"></span>{{ type }} Report
+		</h3>
+		{{ sneaky('form_id', id)}}
+		{% if chapter_choice is defined %}
+			{{ sneaky('chapter_choice', chapter_choice) }}
+		{% endif %}
+		<p class="empty">{{ desc }}</p>
+		{{ form.input('report_name', id='field-report-name-%s'%id, type='text', placeholder='eg. My report', label='Report name') }}
+{% endmacro %}
+
+{% macro type_selector(id='unclaimed') %}
+	<select id="{{ id }}" name="dataset_type">
+		<option selected disabled>...and a report type</option>
+		<option value="membership">SAAB membership data</option>
+		<option value="semester">Student semester data</option>
+	</select>
+{% endmacro %}
+
+{% macro obj_selector(type, objs, default_all=False) %}
+	<select name="{{ type }}">
+		{% if not default_all %}
+			<option value=""  selected disabled>Pick a {{ type }}...</option>
+			<option value="__all__">All</option>
+		{% else %}
+			<option value="__all__" selected>All</option>
+		{% endif %}	
+		{% for obj in objs %}
+			<option value="{{ obj.id }}">{{ obj.title }}</option>
+		{% endfor %}
+	</select>
+{% endmacro %}
+
+{% macro missing_fields(fields) %}
+	{% for field in fields %}
+		<div class="missing-field">
+			<input type="checkbox" class="saabreports-missing-checkbox" value="true" name="saabreports_missing_{{ field }}">
+			<span class="missing-field-label">{{ field }}</span>
+		</div>
+	{% endfor %}
+{% endmacro %}
+
+{% macro error_msg(msg) %}
+	<div class="error-explanation alert alert-error">
+		<p>{{ msg }}</p>
+	</div>
+{% endmacro %}
+
+{% macro report_bottom() %}
+		<div class="control-group">
+			<input type="submit" name="generate_report" value="Generate Report" class="btn btn-default">
+		</div>
+	</form>
+{% endmacro %}

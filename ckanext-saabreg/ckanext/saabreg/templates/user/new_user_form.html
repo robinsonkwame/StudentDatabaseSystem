@@ -1,0 +1,26 @@
+{% import "macros/form.html" as form %}
+
+<form class="form-horizontal" method="post">
+	{{ form.errors(error_summary) }}
+	{{ form.input("first_name", id="field-firstname", label="First Name", placeholder="Joe", value=form_data.get("first_name", ""), classes=["control-medium"]) }}
+	{{ form.input("last_name", id="field-lastname", label="Last Name", placeholder="Bloggs", value=form_data.get("last_name", ""), classes=["control-medium"]) }}
+	{{ form.input("email", id="field-email", label=_("Email"), type="email", placeholder=_("joe@example.com"), value=form_data.get("email", ""), classes=["control-medium"]) }}
+	{{ form.input("password", id="field-password", label=_("Password"), type="password", placeholder="••••••••", value=form_data.get("password", ""), classes=["control-medium"]) }}
+	{{ form.input("confirm_password", id="field-confirm-password", label=_("Confirm"), type="password", placeholder="••••••••", value=form_data.get("password2", ""), classes=["control-medium"]) }}
+	{{ form.select("chapter", id="field-chapter", label="Chapter", options=form_data.org_list, selected=form_data.get("chapter", ""), classes=["control-medium"]) }}
+
+	{% if g.recaptcha_publickey %}
+		{% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
+	{% endif %}
+	
+	<div style="display: none;">
+		{{ form.checkbox("is_student", id="field-student-flag-default", checked=true, value="0") }}
+	</div>
+	{{ form.checkbox("is_student", id="field-student-flag", label="I am a student", checked=true, value="1") }}
+	
+	<div class="form-actions">
+		{% block form_actions %}
+			<button class="btn btn-primary" type="submit">{{ _("Create Account") }}</button>
+		{% endblock %}
+	</div>
+</form>

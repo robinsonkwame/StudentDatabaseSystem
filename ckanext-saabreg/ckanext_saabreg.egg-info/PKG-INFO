@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: ckanext-saabreg
+Version: 0.0.1
+Summary: SAAB registration workflow modifications
+Home-page: https://github.com/robinsax/ckanext-saabreg
+Author: Robin Saxifrage
+Author-email: robinsaxifrage@live.ca
+License: AGPL
+Description: #	What?
+        
+        A CKAN plugin which functionally adds a new type of user to the DMS; students. Students can create and view single dataset.
+        
+        Leverages the [CKAN scheming plugin](https://github.com/ckan/ckanext-scheming).
+        
+        Tested on CKAN 2.7.
+        
+        #	How?
+        
+        Install like any other CKAN plugin. Check out the CKAN docs for a tutorial on how to do that.
+        
+        #	Who?
+        
+        Authored by Robin Saxifrage of [OpenGovGear](http://opengovgear.com) for [SAAB](http://saabnational.org).
+Keywords: CKAN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 2.7

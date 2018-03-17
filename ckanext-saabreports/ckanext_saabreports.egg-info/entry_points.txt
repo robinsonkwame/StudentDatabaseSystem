@@ -1,0 +1,7 @@
+
+        [ckan.plugins]
+        saabreports=ckanext.saabreports.plugin:SaabReportsPlugin
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    

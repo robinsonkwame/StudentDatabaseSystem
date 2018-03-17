@@ -1,0 +1,39 @@
+{% ckan_extends %}
+{% import 'macros/form.html' as form %}
+
+{% block form %}
+	{% if revert %}
+		{% snippet "user/snippets/login_form.html", action=c.login_handler, error_summary=error_summary %}
+		<a href="{{ h.url_for(controller='user', action='request_reset') }}">Forgot your password?</a>
+	{% elif sent %}
+		<div class="module-content">
+			An automatic login link has been sent to the provided email address.<br><br>
+			If you can't find the email, try checking your spam filter.
+		</div>
+	{% elif reg_required %}
+		<div class="module-content">
+			The email you provided is not associated with an account.<br><br>
+			Click <a href="{{ h.url_for(controller='user', action='register') }}">here</a> to register.<br><br>
+			To log in with your username and password, click <a href="{{ h.url_for(controller='user', action='login') + '?revert=1' }}">here</a>.
+		</div>
+	{% elif invalid %}
+		<div class="module-content">
+			The login link you provided is invalid. It may have already been used or expired.<br><br>
+			Click <a href="{{ h.url_for(controller='user', action='login') }}">here</a> to request another.
+		</div>
+	{% else %}
+		<div class="module-content">
+			Enter your email address and your automatic login link will be sent to you.<br><br>
+			To log in with your username and password, click <a href="{{ h.url_for(controller='user', action='login') + '?revert=1' }}">here</a>.
+		</div>
+		<form method="post" class="form-horizontal">
+			{{ form.input('email_addr', label='Email', id='field-email', value='', is_required=True) }}		
+			<div class="form-actions">
+				{% block login_button %}
+				<button class="btn btn-primary" type="submit">Send login link</button>
+				{% endblock %}
+			</div>
+		</form>
+	{% endif %}
+{% endblock %}
+{% block help_forgotten %}{% endblock %}

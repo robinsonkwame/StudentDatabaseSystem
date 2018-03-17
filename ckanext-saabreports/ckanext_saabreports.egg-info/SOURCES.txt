@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+ckanext/__init__.py
+ckanext/saabreports/__init__.py
+ckanext/saabreports/db.py
+ckanext/saabreports/plugin.py
+ckanext_saabreports.egg-info/PKG-INFO
+ckanext_saabreports.egg-info/SOURCES.txt
+ckanext_saabreports.egg-info/dependency_links.txt
+ckanext_saabreports.egg-info/entry_points.txt
+ckanext_saabreports.egg-info/namespace_packages.txt
+ckanext_saabreports.egg-info/top_level.txt

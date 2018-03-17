@@ -1,0 +1,7 @@
+
+		[ckan.plugins]
+		emailauth=ckanext.emailauth.plugin:EmailAuthPlugin
+		
+		[babel.extractors]
+		ckan = ckan.lib.extract:extract_ckan
+	

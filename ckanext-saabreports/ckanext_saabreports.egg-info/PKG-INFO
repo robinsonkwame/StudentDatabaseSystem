@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: ckanext-saabreports
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: https://github.com/robinsax/ckanext-saabreports
+Author: Robin Saxifrage
+Author-email: robinsaxifrage@live.ca
+License: AGPL
+Description: ###	What?
+        
+        Student report generation for the Student African American Brotherhood (SAAB) CKAN DMS
+        
+        ###	Who?
+        
+        Authored by Robin Saxifrage of [OpenGovGear](http://opengovgear.com) for [SAAB](http://saabnational.org).
+Keywords: CKAN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 2.7

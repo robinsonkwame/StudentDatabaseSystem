@@ -1,0 +1,4 @@
+.saabreg-field-disabled,
+.form-actions > .action-info {
+	display: none !important;
+}
